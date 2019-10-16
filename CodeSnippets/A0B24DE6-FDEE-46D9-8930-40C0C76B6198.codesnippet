@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+class VC1: UIViewController {
+
+  @IBOutlet weak var label: UILabel!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "SegueVC1ToVC2" {
+      let segueDestination = segue.destination as! VC2
+      segueDestination.delegate = self
+    }
+  }
+
+}
+
+// textFieldDelegate -&gt; Origin at VC2
+extension VC1: textFieldDelegate {
+  func textFieldWasFilledIn(_ textField: UITextField, text: String) {
+    label.text = text
+  }
+  func otherMethod() {
+    print("other method was called")
+  }
+}
+
+// ========================================================
+
+/*
+ 
+import UIKit
+
+protocol textFieldDelegate: AnyObject {
+  func textFieldWasFilledIn(_ textField: UITextField, text: String)
+  func otherMethod()
+  // ...
+}
+
+class VC2: UIViewController {
+  
+  weak var delegate: textFieldDelegate?
+  
+  @IBOutlet weak var textField: UITextField!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+  
+  @IBAction func buttonWasTapped(_ sender: UIButton) {
+    if let delegate = delegate, let textFieldText = textField.text {
+      delegate.textFieldWasFilledIn(textField, text: textFieldText)
+      dismiss(animated: true, completion: nil)
+    }
+  }
+  
+}
+
+*/</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A0B24DE6-FDEE-46D9-8930-40C0C76B6198</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Delegate, Protocol</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

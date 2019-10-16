@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+import SnapKit
+
+final class &lt;#ClassView#&gt;: UIView {
+    
+    // MARK: - Properties
+    lazy var &lt;#view001#&gt;: UIView = {
+        let &lt;#view001#&gt; = UIView(frame: .zero)
+        &lt;#view001#&gt;.backgroundColor = .red
+        &lt;#view001#&gt;.translatesAutoresizingMaskIntoConstraints = false // ⚠️ REMOVER SE O SNAPKIT ESTIVER HABILITADO
+        return &lt;#view001#&gt;
+    }()
+    
+    // MARK: - Initializers
+    override init(frame: CGRect = .zero) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+extension &lt;#ClassView#&gt;: ViewCodeProtocol {
+    
+    func buildViewHierarchy() {
+        addSubview(&lt;#view001#&gt;)
+    }
+    
+    func setupConstraints() {
+        
+        //    NSLayoutConstraint.activate([
+        //
+        //        &lt;#view001#&gt;.widthAnchor.constraint(equalToConstant: 44),
+        //        &lt;#view001#&gt;.heightAnchor.constraint(equalToConstant: 44)
+        //
+        //        &lt;#view001#&gt;.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+        //        &lt;#view001#&gt;.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+        //        &lt;#view001#&gt;.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
+        //        &lt;#view001#&gt;.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+        //
+        //    ])
+        
+        
+        //    &lt;#view001#&gt;.snp.makeConstraints { make in
+        //        make.width.height.equalTo(44)
+        //        make.center.equalToSuperview()
+        //        make.top.left.equalToSuperview()
+        //    }
+        
+        //    &lt;#view001#&gt;..snp.makeConstraints { make in
+        //        make.top.left.right.bottom.equalToSuperview()
+        //    }
+         
+        
+    }
+    
+    func setupAdditionalConfiguration() {
+        
+    }
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>272B41B5-AAB4-4664-AF26-CFA3F2921C55</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>View Code 4 - View Builder</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

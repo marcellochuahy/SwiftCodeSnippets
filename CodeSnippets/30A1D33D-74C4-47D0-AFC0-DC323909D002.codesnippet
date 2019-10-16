@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>func checkSwiftVersion() {
+    
+    #if swift(&gt;=5.2)
+    print("Hello, Swift 5.2")
+
+    #elseif swift(&gt;=5.1)
+    print("Hello, Swift 5.1")
+
+    #elseif swift(&gt;=5.0)
+    print("Hello, Swift 5.0")
+
+    #elseif swift(&gt;=4.2)
+    print("Hello, Swift 4.2")
+
+    #elseif swift(&gt;=4.1)
+    print("Hello, Swift 4.1")
+
+    #elseif swift(&gt;=4.0)
+    print("Hello, Swift 4.0")
+
+    #elseif swift(&gt;=3.2)
+    print("Hello, Swift 3.2")
+
+    #elseif swift(&gt;=3.0)
+    print("Hello, Swift 3.0")
+
+    #elseif swift(&gt;=2.2)
+    print("Hello, Swift 2.2")
+
+    #elseif swift(&gt;=2.1)
+    print("Hello, Swift 2.1")
+
+    #elseif swift(&gt;=2.0)
+    print("Hello, Swift 2.0")
+
+    #elseif swift(&gt;=1.2)
+    print("Hello, Swift 1.2")
+
+    #elseif swift(&gt;=1.1)
+    print("Hello, Swift 1.1")
+
+    #elseif swift(&gt;=1.0)
+    print("Hello, Swift 1.0")
+
+    #endif
+  }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>30A1D33D-74C4-47D0-AFC0-DC323909D002</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift Version</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

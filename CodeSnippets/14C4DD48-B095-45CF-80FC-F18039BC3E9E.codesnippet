@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>StringOrComment</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>Product &gt;&gt; Scheme &gt;&gt; Edit Scheme &gt;&gt; Run &gt;&gt; Arguments &gt;&gt; Environment Variables:
+
+Name : OS_ACTIVITY_MODE
+Value : disable</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>14C4DD48-B095-45CF-80FC-F18039BC3E9E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - Cleaning Debbugging Area (Xcode 8)</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

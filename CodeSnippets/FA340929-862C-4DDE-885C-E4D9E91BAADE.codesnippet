@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+// Steps to develop an iOS 12 app:
+// 1) Change deployment target to iOS 12
+// 2) Replace AppDelegate's methods
+// 3) Remove SceneDelegate
+// 4) Remove Application Scene Manifest in your info.plist
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+  
+  var window: UIWindow?
+
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+    // Override point for customization after application launch.
+    return true
+  }
+
+}
+
+=====
+
+// Steps to develop an iOS 12 app:
+//
+// 1) Change deployment target to iOS 12
+// 2) Replace AppDelegate's methods:
+
+    import UIKit
+
+    @UIApplicationMain
+    class AppDelegate: UIResponder, UIApplicationDelegate {
+      
+      var window: UIWindow?
+
+      func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+        // Override point for customization after application launch.
+        return true
+      }
+
+    }
+
+// 3) Remove SceneDelegate
+// 4) Remove Application Scene Manifest in your info.plist
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FA340929-862C-4DDE-885C-E4D9E91BAADE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AppDelegate (iOS 12.4)</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

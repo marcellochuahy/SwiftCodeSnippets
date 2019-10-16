@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ 
+  Life Cycle Methods
+ 
+     1. loadView
+     2. viewDidLoad [*a*]
+     3. viewWillAppear [*b*]
+     4. viewWillLayoutSubviews [*c*]
+     5. viewDidLayoutSubviews
+     6. viewDidAppear [*b*]
+ 
+ and maybe:
+ 
+     (?) viewWillLayoutSubviews [*d*]
+     (?) viewDidLayoutSubviews [*d*]
+ 
+ ----------------------
+ 
+  a: Called only once, only when the view is loaded for the first time. Use this method to set initial configurations.
+   
+  b: Is called every time the view is displayed. Use this method to set things that's must to be configured when coming back (with a segue) from another view.
+   
+  c: When bounds are finalized. viewWillLayoutSubviews gets called anytime your view controller's view has its bounds changed. This happens when the view is loaded, when a rotation event occurs, or when a child view controller has its size changed by its parent, etc. If there is anything you need to update before that view lays itself out (and before your constraints are re-applied) you should do it here. you should generally not update constraints here, because updating constraints can cause another layout pass.
+   
+  d: May be called an additional 0 or more times.
+
+
+  func viewWillLayoutSubviews()
+  Called to notify the view controller that its view is about to layout its subviews.
+
+  func viewDidLayoutSubviews()
+  Called to notify the view controller that its view has just laid out its subviews.
+ 
+ ======================
+ 
+ Métodos do Ciclo de Vida
+  
+      1. loadView
+      2. viewDidLoad             [* a *] - Chamado apenas uma vez
+      3. viewWillAppear          [* b *] - Chamado toda vez que a view é exibida
+      4. viewWillLayoutSubviews  [* c *] - Antes das bounds serem calculadas
+      5. viewDidLayoutSubviews
+      6. viewDidAppear           [* b *]
+  
+  e talvez:
+  
+      (?) viewWillLayoutSubviews [* d *]
+      (?) viewDidLayoutSubviews  [* d *]
+  
+    ----------------------
+ 
+    a: Chamado apenas uma vez, somente quando a view é carregada pela primeira vez. Use este método para fazer configurações iniciais.
+     
+    b: É chamado toda vez que a view é exibida. Use este método para definir as coisas que devem ser configuradas ao voltar (com um segue) de outra exibição.
+     
+    c: Quando os bounds são finalizados. O método viewWillLayoutSubviews é chamado sempre que a view do seu viewcontroller tiver seus bounds alterados. Isso acontece quando a view é carregada, quando ocorre um evento de rotação ou quando um view controller filho tem seu tamanho alterado pelo pai, etc. Se houver algo que você precise atualizar antes que a view se expanda (e antes que suas restrições sejam alteradas) você deve fazê-lo aqui. você geralmente não deve atualizar suas constraints aqui, porque a atualização pode causar outra mudança no layout.
+     
+    d: Pode ser chamado de 0 ou mais vezes.
+ 
+    func viewWillLayoutSubviews ()
+    Chamado para notificar o view controller de que sua exibição está prestes a planejar suas subviews.
+
+    func viewDidLayoutSubviews ()
+    Chamado para notificar o view controller de que sua exibição acabou de exibir suas subvisõessubviews
+
+*/</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4DC65E4F-480F-4D1F-AFD8-7F62EDE392C9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Life Cycle Methods</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ 
+ ╭──────────────────────────────╮
+ │  Text field’s configuration  │
+ ╰──────────────────────────────╯
+ 
+ Interface Builder:
+ 
+ 1 - Text field deve estar selecionado
+ 2 - Attributes inspector &gt; Text Field &gt; Return Key &gt; Done
+ 3 - Attributes inspector &gt; Text Field &gt; Auto-enable Return Key &gt; selected
+ 
+ View Controller:
+ 
+ 1 - Protocol UITextFieldDelegate
+ 
+ Ex:
+ 
+ class ViewController: UIViewController, UITextFieldDelegate { ... }
+ 
+ 
+ 2 - Property
+ 
+ Ex:
+ 
+ // MARK: - Properties
+ 
+ @IBOutlet weak var myTextField: UITextField!
+ 
+ 
+ 3 - myTextField.delegate
+ 
+ Ex:
+ 
+ override func viewDidLoad() {
+ super.viewDidLoad()
+ myTextField.delegate = self
+ }
+ 
+ 4 - Methods of UITextFieldDelegate
+ 
+ Ex:
+ 
+ // MARK: - UITextFieldDelegate
+ 
+ // Hides the keyboard when the user touches any point on the screen
+ override func touchesBegan(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) {
+ self.view.endEditing(true)
+ }
+ 
+ // Hides the keyboard when the user touches the Return (Done)
+ func textFieldShouldReturn(_ textField: UITextField) -&gt; Bool {
+ myTextField.resignFirstResponder()
+ return true
+ }
+ 
+ // Called when an editing session begins, or when the keyboard gets displayed.
+ func textFieldDidBeginEditing(_ textField: UITextField) {
+ // code...
+ }
+ 
+ // TextField editing completed
+ func textFieldDidEndEditing(_ textField: UITextField) {
+ // code...
+ }
+ 
+ */
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>76DF08E0-FE83-4FB9-9AC7-DCEA43FB8177</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Text field’s configuration</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

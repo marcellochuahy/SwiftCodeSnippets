@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+class ViewController: UIViewController {
+    
+    // MARK: - Outlets
+    @IBOutlet weak var label: UILabel!
+    
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        label.text = checkSwiftVersion()
+    }
+    
+    // MARK: - Methods
+    func checkSwiftVersion() -&gt; String {
+        
+        #if swift(&gt;=5.2)
+        return "Swift 5.2"
+        
+        #elseif swift(&gt;=5.1)
+        return "Swift 5.1"
+        
+        #elseif swift(&gt;=5.0)
+        return "Swift 5.0"
+        
+        #elseif swift(&gt;=4.2)
+        return "Swift 4.2"
+        
+        #elseif swift(&gt;=4.1)
+        return "Swift 4.1"
+        
+        #elseif swift(&gt;=4.0)
+        return "Swift 4.0"
+        
+        #elseif swift(&gt;=3.2)
+        return "Swift 3.2"
+        
+        #elseif swift(&gt;=3.0)
+        return "Swift 3.0"
+        
+        #elseif swift(&gt;=2.2)
+        return "Swift 2.2"
+        
+        #elseif swift(&gt;=2.1)
+        return "Swift 2.1"
+        
+        #elseif swift(&gt;=2.0)
+        return "Swift 2.0"
+        
+        #elseif swift(&gt;=1.2)
+        return "Swift 1.2"
+        
+        #elseif swift(&gt;=1.1)
+        return "Swift 1.1"
+        
+        #elseif swift(&gt;=1.0)
+        return "Swift 1.0"
+        
+        #endif
+
+    }
+  
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>09D712F9-19EE-4102-BAF4-A034DE33EB67</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift version</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Foundation
+
+struct Model {
+  
+  let &lt;#a#&gt;: String
+  let &lt;#b#&gt;: String
+  let &lt;#c#&gt;: String
+  
+  init(a: String, b: String, c: String) {
+    self.&lt;#a#&gt; = &lt;#a#&gt;
+    self.&lt;#b#&gt; = &lt;#b#&gt;
+    self.&lt;#c#&gt; = &lt;#c#&gt;
+  }
+  
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2A1C34F6-E806-45B5-A4BF-E7C306EAEEAA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Model</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

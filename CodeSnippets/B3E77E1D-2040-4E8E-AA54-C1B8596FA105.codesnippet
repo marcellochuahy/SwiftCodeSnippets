@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// MODEL:
+struct &lt;#Model#&gt;: Codable {
+  let &lt;#property_1#&gt;: String
+  let &lt;#property_2#&gt;: String
+  init(&lt;#property_1#&gt;: String, &lt;#property_2#&gt;: String) {
+    self.&lt;#property_1#&gt; = &lt;#property_1#&gt;
+    self.&lt;#property_2#&gt; = &lt;#property_2#&gt;
+  }
+}
+
+// VIEWCONTROLLER:
+
+// MARK: - Properties
+var &lt;#models#&gt;: [&lt;#Model#&gt;] = []
+
+  // MARK: - Methods
+func apiRequest() {
+  if let url = URL(string: "&lt;#http://domain/api/v1/...#&gt;") {
+    URLSession.shared.dataTask(with: url) { data, response, error in
+      if let data = data {
+        do {
+          self.&lt;#models#&gt; = try JSONDecoder().decode([&lt;#Model#&gt;].self, from: data)
+           print("Count: \(self.&lt;#models#&gt;.count)")
+          DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+          }
+        } catch let error {
+          print(error)
+        }
+      }
+      }.resume()
+  }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B3E77E1D-2040-4E8E-AA54-C1B8596FA105</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>API Request</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

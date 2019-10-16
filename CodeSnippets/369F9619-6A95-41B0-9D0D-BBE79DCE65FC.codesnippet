@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class ViewController: UIViewController {
+  
+  //  Life cycle:
+  //  ----------
+  //  loadView -----------------&gt; Set constraints
+  //  viewDidLoad --------------&gt; Set other property
+  //  viewWillAppear
+  //  viewWillLayoutSubviews ---&gt; Reset constraints if needed
+  //  viewDidLayoutSubviews
+  //  viewDidAppear
+  
+  //  Never calculate frames manually by yourself!
+  //  Initialize your views with .zero rect frame
+  //  Set translatesAutoresizingMaskIntoConstraints to false
+  //  Add your view to the view hierarchy using addSubview
+  //  Create and activate your layout constraints NSLayoutConstraint.activate
+  //  Use loadView instead of viewDidLoad for creating views with constraints
+  //  Take care of memory management by using weak properties
+  //  Set every other property like background color, etc. in viewDidLoad
+  
+  // https://theswiftdev.com/2018/06/14/mastering-ios-auto-layout-anchors-programmatically-from-swift/
+
+  override func loadView() {
+    
+    super.loadView()
+
+    self.view.translatesAutoresizingMaskIntoConstraints = false
+    
+    let subview_01 = UIView(frame: .zero)
+    subview_01.tag = 1
+    subview_01.translatesAutoresizingMaskIntoConstraints = false
+    self.view.addSubview(subview_01)
+    
+    let subview_02 = UIView(frame: .zero)
+    subview_01.tag = 2
+    subview_02.translatesAutoresizingMaskIntoConstraints = false
+    self.view.addSubview(subview_02)
+    
+    let constraintDefault = CGFloat(100)
+    
+    NSLayoutConstraint.activate([
+      
+      subview_01.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0),
+      subview_01.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
+      subview_01.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
+      subview_01.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0),
+      
+      // Set fixed with or height
+      subview_02 .heightAnchor .constraint(equalToConstant: constraintDefault),
+      subview_02 .widthAnchor  .constraint(equalToConstant: constraintDefault),
+      
+      // Set with or height according to another view
+      subview_02 .heightAnchor .constraint(equalTo: subview_01 .heightAnchor ),
+      subview_02 .widthAnchor  .constraint(equalTo: subview_01 .widthAnchor  ),
+      
+      // Set aspect ratio
+      subview_02 .heightAnchor .constraint(equalTo: subview_01 .widthAnchor,  multiplier: 9/16),
+      subview_02 .widthAnchor  .constraint(equalTo: subview_01 .heightAnchor, multiplier: 16/9),
+      
+      // Center horizontally &amp; vertically
+      subview_02 .centerXAnchor .constraint(equalTo: self.view.centerXAnchor),
+      subview_02 .centerYAnchor .constraint(equalTo: self.view.centerYAnchor),
+      
+      // Fill inside view with padding
+      subview_02 .topAnchor      .constraint(equalTo: self.view.topAnchor,      constant:  32),
+      subview_02 .leadingAnchor  .constraint(equalTo: self.view.leadingAnchor,  constant:  32),
+      subview_02 .trailingAnchor .constraint(equalTo: self.view.trailingAnchor, constant: -32),
+      subview_02 .bottomAnchor   .constraint(equalTo: self.view.bottomAnchor,   constant: -32),
+      
+      // Proportional width or height
+      subview_02 .widthAnchor  .constraint(equalTo: self.view.widthAnchor,  multiplier: 1/3),
+      subview_02 .heightAnchor .constraint(equalTo: self.view.heightAnchor, multiplier: 2/3),
+      
+      // Using safe area layout guides
+      subview_02 .topAnchor      .constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+      subview_02 .leadingAnchor  .constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+      subview_02 .trailingAnchor .constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+      subview_02 .bottomAnchor   .constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+      
+      ])
+
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    if let customViewWithTag = view.viewWithTag(1) as? UILabel {
+      customViewWithTag.backgroundColor = .red
+    }
+    
+    if let customViewWithTag = view.viewWithTag(2) as? UILabel {
+      customViewWithTag.backgroundColor = .blue
+    }
+    
+  }
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>369F9619-6A95-41B0-9D0D-BBE79DCE65FC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SubView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import XCTest
+@testable import &lt;#ProjectName#&gt;
+
+class &lt;#ProjectNameTests#&gt;: XCTestCase {
+  
+  // MARK: - System Under Test
+  var sut: &lt;#System_Under_Test: class#&gt;!
+  
+  // MARK: - Life cycle
+  /// This method is called before the invocation of each test method in the class.
+  override func setUp() {
+    super.setUp()
+    sut = &lt;#System_Under_Test: class#&gt;()
+  }
+  
+  /// This method is called after the invocation of each test method in the class.
+  override func tearDown() {
+    sut = nil
+    super.tearDown()
+  }
+  
+  // MARK: - Tests
+  func &lt;#testName#&gt;() {
+    /// given ( set up any values needed )
+    let &lt;#parameterName#&gt; = &lt;#parameterValue#&gt;
+    /// when ( execute the code being tested )
+    let result = sut.&lt;#methodToBeTested#&gt;(&lt;#parameterName#&gt;)
+    /// then ( assert the expected result with a message that prints if the test fails )
+    let expectedResult = "&lt;#expectedResult: String#&gt;"
+    let messageIfTestFails = "&lt;#messageIfTestFails: String#&gt;"
+    XCTAssertEqual(result, expectedResult, messageIfTestFails)
+  }
+  
+  func testSomeFuncionality() { XCTAssertEqual(sut.someMethod("someParameter"), "Expected result", "Message if test fails") }
+  
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8993F765-44AD-44E0-B57D-F76324034B30</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Unit Test</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

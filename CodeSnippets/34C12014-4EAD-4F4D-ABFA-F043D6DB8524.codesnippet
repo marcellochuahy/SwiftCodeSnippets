@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>var numbers = [2, 1, 3]
+
+// A sorted()
+// Ordena o variável, sem sobreescrever seu valor
+var sortedNumbersASC = numbers.sorted() // [1, 2, 3]
+var sortedNumbersDESC = numbers.sorted(by: &gt;) // [3, 2, 1]
+
+// B sort()
+// Ordena o variável, sobreescrevendo seu valor
+numbers.sort() // [1, 2, 3]
+
+// C map()
+// Retorna uma matriz com os resultados da aplicação de uma transformação a cada item.
+let numbersAsString = numbers.map{ String("Number \($0)") } // ["Number 1", "Number 2", "Number 3"]
+
+// D filter()
+// Retorna uma matriz com os itens que correspondem a uma condição de inclusão.
+let numbersLessThan3 = numbers.filter{ $0 &lt; 3 } // [1, 2]
+
+// E reduce()
+// Retorna um único valor combinando um valor inicial e cada item de acordo com uma condição
+let soma_100_mais_numbers = numbers.reduce( 100, +) // 100 + 1 + 2 + 3 = 106</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>34C12014-4EAD-4F4D-ABFA-F043D6DB8524</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>sorted(), sort(), map(), filter(), reduce()</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

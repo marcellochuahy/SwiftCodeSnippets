@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+@IBDesignable class PlusView: UIView {
+
+    @IBInspectable var     circleBackground: UIColor = UIColor.lightGray
+    @IBInspectable var      plusSignalColor: UIColor = UIColor.white
+    @IBInspectable var  plusSignalLineWidth: CGFloat = 3.0
+
+    // MARK: - Methods
+
+    override func draw(_ rect: CGRect) {
+        
+        var path = UIBezierPath()
+        
+        // Circle
+        path = UIBezierPath(ovalIn: rect)
+        circleBackground.setFill()
+        path.fill()
+        
+        // Plus signal
+        path = UIBezierPath()
+        let pathWidth: CGFloat = min(bounds.width, bounds.height) * 0.6
+        let antiAliasingCorrection: CGFloat = 0.5
+        // Horizontal Path
+        path.move    (to: CGPoint(x: bounds.width/2 - pathWidth/2, y: bounds.height/2 + antiAliasingCorrection) )
+        path.addLine (to: CGPoint(x: bounds.width/2 + pathWidth/2, y: bounds.height/2 + antiAliasingCorrection) )
+        // Vertical Path
+        path.move    (to: CGPoint(x: bounds.width/2 + antiAliasingCorrection, y: bounds.height/2 - pathWidth/2) )
+        path.addLine (to: CGPoint(x: bounds.width/2 + antiAliasingCorrection, y: bounds.height/2 + pathWidth/2) )
+        // Thickness
+        path.lineWidth = plusSignalLineWidth
+        // Stroke Color
+        plusSignalColor.setStroke()
+        // Stroke
+        path.stroke()
+        // Note: Never call drawRect(_:) directly.
+        // If your view is not being updated, then call setNeedsDisplay() on the view.
+        
+    }
+    
+    // Note: Never call drawRect(_:) directly.
+    // If your view is not being updated, then call setNeedsDisplay() on the view.
+
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F7DCB8DB-04DB-4ABA-A159-932062762CF4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Draw with Bezier Path</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

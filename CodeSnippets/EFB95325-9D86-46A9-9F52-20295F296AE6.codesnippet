@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>  override func viewDidLoad() {
+    super.viewDidLoad()
+    navigationItem.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
+  }
+  
+  func makeBackButton() -&gt; UIButton {
+    let backButtonImage = UIImage(named: "backButtonImage")?.withRenderingMode(.alwaysTemplate)
+    let backButton = UIButton(type: .custom)
+    backButton.setImage(backButtonImage, for: .normal)
+    backButton.tintColor = .tomato
+    backButton.setTitle("  Voltar", for: .normal)
+    backButton.setTitleColor(.tomato, for: .normal)
+    backButton.addTarget(self, action: #selector(self.backButtonPressed), for: .touchUpInside)
+    return backButton
+  }
+  
+  @objc func backButtonPressed() {
+    dismiss(animated: true, completion: nil)
+    // navigationController?.popViewController(animated: true)
+  }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EFB95325-9D86-46A9-9F52-20295F296AE6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Back Button</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

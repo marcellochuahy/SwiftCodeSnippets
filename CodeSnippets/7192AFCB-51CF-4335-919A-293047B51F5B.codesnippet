@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// MARK: - Navigation 
+    // prepare(for segue...) SplitView
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        var destinationViewController = segue.destination
+        
+        if let navigationController = destinationViewController as? UINavigationController {
+            destinationViewController = navigationController.visibleViewController ?? destinationViewController
+        }
+        
+        if let detailViewController = destinationViewController as? DetailViewController,
+            let identifier = segue.identifier,
+            let seguesDictionaryValue = seguesDictionary[identifier] {
+            print(seguesDictionaryValue)
+            detailViewController.aProperty = seguesDictionaryValue
+            detailViewController.navigationItem.title = (sender as? UIButton)?.currentTitle
+        }
+    }
+    
+    private let seguesDictionary = [
+        "segueFromButton1" : "value_A",
+        "segueFromButton2" : "value_B",
+        "segueFromButton3" : "value_C"
+    ]</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7192AFCB-51CF-4335-919A-293047B51F5B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>prepare(for segue...) =&gt; SplitView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

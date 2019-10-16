@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Foundation
+
+protocol ViewCodeProtocol {
+    
+    func buildViewHierarchy()
+    func setupConstraints()
+    func setupAdditionalConfiguration()
+    
+    // Chama os métodos acima na ordem pré-fixada
+    func setupView()
+}
+
+extension ViewCodeProtocol {
+    func setupView() {
+        buildViewHierarchy()
+        setupConstraints()
+        setupAdditionalConfiguration()
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A0722FA3-F9E7-4684-A820-139F3929C70A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>View Code 2 - ViewCodeProtocol</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

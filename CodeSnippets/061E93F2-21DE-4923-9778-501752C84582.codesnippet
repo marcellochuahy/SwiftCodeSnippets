@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>func createViewProgrammatically(){
+            
+            let subview = UIView()
+            
+            self.view.addSubview(subview) // Add subview to view
+            
+            subview.translatesAutoresizingMaskIntoConstraints = false
+            
+            // ╭────────────────────────────╮
+            // │  Constraints -&gt; Dimension  │
+            // ╰────────────────────────────╯
+            
+            //  subview.widthAnchor.constraint  ( equalToConstant: 200 ).isActive = true
+            //  subview.heightAnchor.constraint ( equalToConstant: 350 ).isActive = true
+            
+            // ╭───────────────────────────────╮
+            // │  Constraints -&gt; Aspect ratio  │
+            // ╰───────────────────────────────╯
+            
+            //  subview.heightAnchor.constraint(equalTo: subview.widthAnchor, multiplier: 2/1).isActive = true
+            
+            // ╭──────────────────────────╮
+            // │  Constraints -&gt; Margins  │
+            // ╰──────────────────────────╯
+            
+            //  subview.topAnchor.constraint      ( equalTo: topLayoutGuide.bottomAnchor , constant:  16 ).isActive = true
+            //  subview.bottomAnchor.constraint   ( equalTo: bottomLayoutGuide.topAnchor , constant: -16 ).isActive = true
+            
+            //  let margins = view.layoutMarginsGuide
+            //  subview.leadingAnchor.constraint  ( equalTo: margins.leadingAnchor  ).isActive = true
+            //  subview.trailingAnchor.constraint ( equalTo: margins.trailingAnchor ).isActive = true
+            
+            //  subview.leadingAnchor.constraint  ( equalTo: subview.superview!.leadingAnchor  , constant:  16 ).isActive = true
+            //  subview.trailingAnchor.constraint ( equalTo: subview.superview!.trailingAnchor , constant: -16 ).isActive = true
+            
+            // ╭────────────────────────────╮
+            // │  Constraints -&gt; Centering  │
+            // ╰────────────────────────────╯
+            
+            //  subview.centerXAnchor.constraint ( equalTo: subview.superview!.centerXAnchor).isActive = true
+            //  subview.centerYAnchor.constraint ( equalTo: subview.superview!.centerYAnchor).isActive = true
+            
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>061E93F2-21DE-4923-9778-501752C84582</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>createViewProgrammatically</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

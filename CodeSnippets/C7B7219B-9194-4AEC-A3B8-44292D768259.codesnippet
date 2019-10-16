@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+  
+  var window: UIWindow?
+  
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+    let window = UIWindow(frame: UIScreen.main.bounds)
+    let controller = ViewController()
+    window.rootViewController = controller
+    self.window = window
+    window.makeKeyAndVisible()
+    return true
+  }
+
+}
+
+// ============================================================
+
+import UIKit
+
+class ViewController: UIViewController {
+  
+  override func loadView() {
+    let view = UIView(frame: UIScreen.main.bounds)
+    view.backgroundColor = .red
+    self.view = view
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C7B7219B-9194-4AEC-A3B8-44292D768259</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>View Code 1 - AppDelegate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
