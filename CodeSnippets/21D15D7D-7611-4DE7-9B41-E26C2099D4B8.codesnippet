@@ -10,28 +10,79 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>//: A UIKit based Playground for presenting user interface
+
+/*
+ 
+ 1
+ Delete Main.Storyboard
+
+ 2
+ Project folder
+ → General Tab
+ → Deployment Info
+ → Main Interface
+ → Deixe o campo vazio
+
+ 3
+ Information Property List
+ → Application Scene Manifest
+ → Scene Configuration
+ → Application Session Role
+ → Item 0
+ → StoryBoardName
+ → Clique no (-) para deletar essa entrada
+
+ 4
+ Delete ViewController.swift
+
+ 5
+ Create NewViewController.swift (renomeie de acordo com sua necessidade)
+
+ 6
+ SceneDelegate.swift
+
+ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+
+     /// 1. Capture the scene
+     guard let windowScene = (scene as? UIWindowScene) else { return }
+     /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
+     let window = UIWindow(windowScene: windowScene)
+     /// 3. Create a view hierarchy programmatically
+     let viewController = ViewController()
+     viewController.view.backgroundColor = .red
+     /// 4. Set viewController as  rootViewController of navigation's stack
+     let navigationController = UINavigationController(rootViewController: viewController)
+     /// 4. Set the navigationController as root view controller of the window
+     window.rootViewController = navigationController
+     /// 5. Set the window and call makeKeyAndVisible()
+     self.window = window
+     window.makeKeyAndVisible()
+
+ }
+
+*/
   
 import UIKit
 import PlaygroundSupport
 
-protocol ViewCodeProtocol: class {
-    
-    func buidViewHierarchy()
-    func setupConstraints()
-    func setupComplementaryConfiguration()
-    
-    func callViewCodeMethodsInPresetOrder()
+// MARK: - ViewCodeDelegate
+
+protocol ViewCodeDelegate: class {
+    func viewWillAddSubviews()
+    func viewWillSetupConstraints()
+    func viewWillSetupComplementaryConfiguration()
+    func viewWillLoadViewCodeMethodsInPresetOrder()
 }
 
-extension ViewCodeProtocol {
-    
-    func callViewCodeMethodsInPresetOrder() {
-        buidViewHierarchy()
-        setupConstraints()
-        setupComplementaryConfiguration()
+extension ViewCodeDelegate {
+    func viewWillLoadViewCodeMethodsInPresetOrder() {
+        viewWillAddSubviews()
+        viewWillSetupConstraints()
+        viewWillSetupComplementaryConfiguration()
     }
-    
 }
+
+// =====================================================
 
 class ViewController: UIViewController {
     
@@ -48,16 +99,15 @@ class ViewController: UIViewController {
     var labelBackgroundColor: UIColor
     
     // MARK: - Initializers
-    init(labelText: String = "Hello, World!",
-         labelTextColor: UIColor = .white,
-         labelBackgroundColor: UIColor = .systemBlue) {
-        
+    init(
+        labelText: String = "Hello, World!",
+        labelTextColor: UIColor = .white,
+        labelBackgroundColor: UIColor = .systemBlue
+    ) {
         self.labelText = labelText
         self.labelTextColor = labelTextColor
         self.labelBackgroundColor = labelBackgroundColor
-        
         super.init(nibName: nil, bundle: nil)
-        
     }
     
     required init?(coder: NSCoder) {
@@ -66,44 +116,38 @@ class ViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
     override func loadView() {
-        callViewCodeMethodsInPresetOrder()
+        viewWillLoadViewCodeMethodsInPresetOrder()
     }
 }
 
 // MARK: - Extension ViewCodeProtocol
-extension ViewController: ViewCodeProtocol {
+extension ViewController: ViewCodeDelegate {
     
-    func buidViewHierarchy() {
-        
+    func viewWillAddSubviews() {
         let view = UIView()
         view.backgroundColor = .white
-        
         view.addSubview(label)
-        
         self.view = view
     }
     
-    func setupConstraints() {
-        
+    func viewWillSetupConstraints() {
         NSLayoutConstraint.activate([
             // Size
             label.widthAnchor.constraint(equalToConstant: 44 * 3),
             label.heightAnchor.constraint(equalToConstant: 44),
             // Position
-            label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-        
     }
     
-    func setupComplementaryConfiguration() {
-        
+    func viewWillSetupComplementaryConfiguration() {
         label.text = labelText
         label.textColor = labelTextColor
         label.backgroundColor = labelBackgroundColor
         label.layer.cornerRadius = 4
         label.layer.masksToBounds = true
-        
+        // Intencionally not implemented - (Use this way if needed)
     }
   
 }
